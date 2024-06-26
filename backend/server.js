@@ -5,6 +5,7 @@ import {v2 as cloudinary} from "cloudinary";
 //rutas
 import authRoutes from "./routes/auth.routes.js";
 import userRoutes from "./routes/user.routes.js";
+import postRoutes from "./routes/post.routes.js";
 //db
 import connectMongoDB from "./db/connectMongoDB.js";
 
@@ -28,8 +29,10 @@ app.use(express.urlencoded({extended:true}))
 
 app.use(cookieParser());
 
+//llamamos los modelos para crear bases de dato
 app.use("/api/auth",authRoutes);
 app.use("/api/users",userRoutes);
+app.use("/api/posts",postRoutes);
 
 app.listen(port,()=>{
     console.log(`Listening on port ${port}`);
