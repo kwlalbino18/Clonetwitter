@@ -4,8 +4,9 @@
   "description": "",
   "main": "backend/server.js",
   "scripts": {
-    "dev": "nodemon backend/index.js",
-    "start": "node backend/index.js"
+    "dev": "NODE_ENV=development nodemon backend/server.js",
+		"start": "NODE_ENV=production node backend/server.js",
+		"build": "npm install && npm install --prefix frontend && npm run build --prefix frontend"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
     "cloudinary": "^2.2.0",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
